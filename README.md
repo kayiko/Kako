@@ -1,1 +1,1 @@
-# This is a games Engine leaning by Cherno
+# This is a games Engine learning by Cherno
