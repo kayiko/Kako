@@ -1,0 +1,3 @@
+[submodule "Kako/vendor/spdlog"]
+	path = Kako/vendor/spdlog
+	url = https://github.com/gabime/spdlog
