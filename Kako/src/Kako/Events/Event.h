@@ -1,8 +1,7 @@
 #pragma once
 
-#include <string>
-#include <functional>
 
+#include "hzpch.h"
 #include "/Project/GameEngine/Kako/Kako/src/Kako/Core.h"
 
 namespace Kako {

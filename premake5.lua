@@ -19,6 +19,9 @@ project "Kako" --项目名称
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")--输出目录
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")--中间临时文件的目录
 
+    pchheader "hzpch.h"
+    pchsource "Kako/src/hzpch.cpp"
+
     files--该项目的文件
     {
         "%{prj.name}/src/**.h",
@@ -27,6 +30,7 @@ project "Kako" --项目名称
 
     includedirs--附加包含目录
     {
+        "%{prj.name}/src",
         "%{prj.name}/vendor/spdlog/include"
     }
 
