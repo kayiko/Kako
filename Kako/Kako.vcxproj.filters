@@ -4,6 +4,9 @@
     <Filter Include="Kako">
       <UniqueIdentifier>{CBDA877C-B711-890D-60FE-6E104C14050F}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Kako\Events">
+      <UniqueIdentifier>{2f5fd8b1-819b-43fe-9e7d-49aa5cf41d85}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Kako.h" />
@@ -19,6 +22,19 @@
     <ClInclude Include="src\Kako\Log.h">
       <Filter>Kako</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="src\Kako\Events\KeyEvent.h">
+      <Filter>Kako\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Kako\Events\MouseEvent.h">
+      <Filter>Kako\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Kako\Events\ApplicationEvent.h">
+      <Filter>Kako\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Kako\Events\Event.h">
+      <Filter>Kako\Events</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Kako\Application.cpp">
@@ -27,5 +43,8 @@
     <ClCompile Include="src\Kako\Log.cpp">
       <Filter>Kako</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Kako.rc" />
   </ItemGroup>
 </Project>

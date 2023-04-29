@@ -143,15 +143,23 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="resource.h" />
     <ClInclude Include="src\Kako.h" />
     <ClInclude Include="src\Kako\Application.h" />
     <ClInclude Include="src\Kako\Core.h" />
     <ClInclude Include="src\Kako\EntryPoint.h" />
+    <ClInclude Include="src\Kako\Events\ApplicationEvent.h" />
+    <ClInclude Include="src\Kako\Events\Event.h" />
+    <ClInclude Include="src\Kako\Events\KeyEvent.h" />
+    <ClInclude Include="src\Kako\Events\MouseEvent.h" />
     <ClInclude Include="src\Kako\Log.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Kako\Application.cpp" />
     <ClCompile Include="src\Kako\Log.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Kako.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

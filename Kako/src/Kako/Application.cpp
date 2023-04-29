@@ -1,4 +1,6 @@
 #include "Application.h"
+#include"Events/ApplicationEvent.h"
+#include"Log.h"
 namespace Kako {
 	Application::Application()
 	{
@@ -8,6 +10,8 @@ namespace Kako {
 	}
 	void Application::Run()
 	{
+		WindowResizeEvent e(720,720);
+		HZ_TRACE(e);
 		while (true);
 	}
 }
