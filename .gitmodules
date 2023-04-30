@@ -1,3 +1,8 @@
 [submodule "Kako/vendor/spdlog"]
 	path = Kako/vendor/spdlog
 	url = https://github.com/gabime/spdlog
+
+
+[submodule "Kako/vendor/GLFW"]
+	path = Kako/vendor/GLFW
+	url = https://github.com/TheCherno/glfw
