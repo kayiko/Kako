@@ -37,6 +37,12 @@
     <ClInclude Include="src\Kako\Events\MouseEvent.h">
       <Filter>Kako\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Kako\Layer.h">
+      <Filter>Kako</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Kako\LayerStack.h">
+      <Filter>Kako</Filter>
+    </ClInclude>
     <ClInclude Include="src\Kako\Log.h">
       <Filter>Kako</Filter>
     </ClInclude>
@@ -50,6 +56,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Kako\Application.cpp">
+      <Filter>Kako</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Kako\Layer.cpp">
+      <Filter>Kako</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Kako\LayerStack.cpp">
       <Filter>Kako</Filter>
     </ClCompile>
     <ClCompile Include="src\Kako\Log.cpp">

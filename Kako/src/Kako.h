@@ -4,3 +4,4 @@
 #include <stdio.h>
 //EntryPoint
 #include "Kako/EntryPoint.h"
+#include "Kako/Layer.h"
