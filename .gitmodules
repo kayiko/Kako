@@ -6,3 +6,6 @@
 [submodule "Kako/vendor/GLFW"]
 	path = Kako/vendor/GLFW
 	url = https://github.com/TheCherno/glfw
+[submodule "Kako/vendor/imgui"]
+	path = Kako/vendor/imgui
+	url = https://github.com/TheCherno/imgui

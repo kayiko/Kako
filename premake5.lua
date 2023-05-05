@@ -12,8 +12,13 @@ workspace "Kako" --解决方案名称
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 include "Kako/vendor/GLFW"
+include "Kako/vendor/Glad"
+include "Kako/vendor/imgui"
+
 IncludeDir = {}
 IncludeDir["GLFW"] = "Kako/vendor/GLFW/include"
+IncludeDir["Glad"] = "Kako/vendor/Glad/include"
+IncludeDir["ImGui"] = "Kako/vendor/imgui"
 
 project "Kako" --项目名称
     location "Kako" --相对路径
@@ -36,11 +41,15 @@ project "Kako" --项目名称
     {
         "%{prj.name}/src",
         "%{prj.name}/vendor/spdlog/include",
-        "%{IncludeDir.GLFW}"
+        "%{IncludeDir.GLFW}",
+        "%{IncludeDir.Glad}",
+        "%{IncludeDir.ImGui}"
     }
     links
     {
         "GLFW",
+        "Glad",
+        "ImGui",
         "opengl32.lib"
     }
     
@@ -57,6 +66,7 @@ project "Kako" --项目名称
             "_WINDLL",
             "_UNICODE",
             "UNICODE",
+            "GLFW_INCLUDE_NONE"
         }
 
         postbuildcommands -- build后的自定义命令

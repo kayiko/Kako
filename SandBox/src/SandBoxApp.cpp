@@ -24,6 +24,7 @@ class SandBox : public Kako::Application {
     public:
         SandBox() {
 			PushLayer(new ExampleLayer());
+			PushOverlay(new Kako::ImGuiLayer());
         }
         ~SandBox() {
 
