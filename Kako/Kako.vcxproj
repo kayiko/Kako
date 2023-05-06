@@ -162,9 +162,11 @@
     <ClInclude Include="src\Kako\Events\MouseEvent.h" />
     <ClInclude Include="src\Kako\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\Kako\Input.h" />
+    <ClInclude Include="src\Kako\KeyCodes.h" />
     <ClInclude Include="src\Kako\Layer.h" />
     <ClInclude Include="src\Kako\LayerStack.h" />
     <ClInclude Include="src\Kako\Log.h" />
+    <ClInclude Include="src\Kako\MouseButtonCodes.h" />
     <ClInclude Include="src\Kako\Window.h" />
     <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />

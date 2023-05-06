@@ -10,12 +10,19 @@ public:
 
 	void OnUpdate() override
 	{
-		HZ_INFO("ExampleLayer::Update");
+		if(Kako::Input::IsKeyPressed(HZ_KEY_TAB))
+		HZ_TRACE("Tab key is pressed!");
 	}
 
 	void OnEvent(Kako::Event& event) override
 	{
-		HZ_TRACE("{0}", event);
+		if (event.GetEventType() == Kako::EventType::KeyPressed)
+		{
+			Kako::KeyPressedEvent& e = (Kako::KeyPressedEvent&)event;
+			if (e.GetKeyCode() == HZ_KEY_TAB)
+				HZ_TRACE("Tab key is pressed (event)!");
+			HZ_TRACE("{0}", (char)e.GetKeyCode());
+		}
 	}
 
 };
