@@ -1,5 +1,6 @@
 workspace "Kako" --解决方案名称
     architecture "x86_64" --编译平台 只编64位--(x86,x86_64,ARM)
+    startproject "Sandbox"
 
     configurations 
     {
@@ -20,10 +21,13 @@ IncludeDir["GLFW"] = "Kako/vendor/GLFW/include"
 IncludeDir["Glad"] = "Kako/vendor/Glad/include"
 IncludeDir["ImGui"] = "Kako/vendor/imgui"
 
+
+
 project "Kako" --项目名称
     location "Kako" --相对路径
     kind "SharedLib" --表明该项目是dll动态库
     language "c++"
+    staticruntime "off"
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")--输出目录
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")--中间临时文件的目录
@@ -71,24 +75,25 @@ project "Kako" --项目名称
 
         postbuildcommands -- build后的自定义命令
         {
-            ("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox") --拷贝引擎dll库到sanbox.exe的同一目录下去
+            --("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox") --拷贝引擎dll库到sanbox.exe的同一目录下去
+            ("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"")
         }
 
     filter "configurations:Debug"
         defines "HZ_DEBUG"
-        buildoptions "/MDd"
+        
         runtime "Debug"
         symbols "on"
 
     filter "configurations:Release"
         defines "HZ_RELEASE"
-        buildoptions "/MD"
+        
         runtime "Release"
         optimize "on"
 
     filter "configurations:Dist"
         defines "HZ_DIST"
-        buildoptions "/MD"
+        
         runtime "Release"
         optimize "on"
 
@@ -96,6 +101,7 @@ project "Sandbox"
     location "Sandbox"
     kind "ConsoleApp"
     language "C++"
+    staticruntime "off"
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -119,7 +125,7 @@ project "Sandbox"
 
     filter "system:windows"
         cppdialect "c++17"
-        staticruntime "On"
+        
         systemversion "latest"
 
         defines
@@ -131,18 +137,18 @@ project "Sandbox"
 
     filter "configurations:Debug"
         defines "HZ_DEBUG"
-        buildoptions "/MDd"
+        
         runtime "Debug"
         symbols "on"
 
     filter "configurations:Release"
         defines "HZ_RELEASE"
-        buildoptions "/MD"
+        
         runtime "Release"
         optimize "on"
 
     filter "configurations:Dist"
         defines "HZ_DIST"
-        buildoptions "/MD"
+        
         runtime "Release"
         optimize "on"
