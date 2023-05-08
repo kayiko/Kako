@@ -9,3 +9,6 @@
 [submodule "Kako/vendor/imgui"]
 	path = Kako/vendor/imgui
 	url = https://github.com/TheCherno/imgui
+[submodule "Kako/vendor/glm"]
+	path = Kako/vendor/glm
+	url = https://github.com/g-truc/glm

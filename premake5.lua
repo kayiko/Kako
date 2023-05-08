@@ -16,10 +16,12 @@ include "Kako/vendor/GLFW"
 include "Kako/vendor/Glad"
 include "Kako/vendor/imgui"
 
+
 IncludeDir = {}
 IncludeDir["GLFW"] = "Kako/vendor/GLFW/include"
 IncludeDir["Glad"] = "Kako/vendor/Glad/include"
 IncludeDir["ImGui"] = "Kako/vendor/imgui"
+IncludeDir["glm"] = "Kako/vendor/glm"
 
 
 
@@ -38,7 +40,9 @@ project "Kako" --项目名称
     files--该项目的文件
     {
         "%{prj.name}/src/**.h",
-        "%{prj.name}/src/**.cpp"
+        "%{prj.name}/src/**.cpp",
+        "%{prj.name}/vendor/glm/glm/**.hpp",
+        "%{prj.name}/vendor/glm/glm/**.inl"
     }
 
     includedirs--附加包含目录
@@ -47,7 +51,8 @@ project "Kako" --项目名称
         "%{prj.name}/vendor/spdlog/include",
         "%{IncludeDir.GLFW}",
         "%{IncludeDir.Glad}",
-        "%{IncludeDir.ImGui}"
+        "%{IncludeDir.ImGui}",
+        "%{IncludeDir.glm}"
     }
     links
     {
@@ -115,7 +120,8 @@ project "Sandbox"
     includedirs
     {
         "Kako/vendor/spdlog/include",
-        "Kako/src"
+        "Kako/src",
+        "%{IncludeDir.glm}"
     }
 
     links
