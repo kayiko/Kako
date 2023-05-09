@@ -27,9 +27,10 @@ IncludeDir["glm"] = "Kako/vendor/glm"
 
 project "Kako" --项目名称
     location "Kako" --相对路径
-    kind "SharedLib" --表明该项目是dll动态库
-    language "c++"
-    staticruntime "off"
+    kind "StaticLib" --表明该项目是dll动态库
+    language "C++"
+    cppdialect "C++17"
+    staticruntime "on"
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")--输出目录
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")--中间临时文件的目录
@@ -44,7 +45,10 @@ project "Kako" --项目名称
         "%{prj.name}/vendor/glm/glm/**.hpp",
         "%{prj.name}/vendor/glm/glm/**.inl"
     }
-
+    defines
+	{
+		"_CRT_SECURE_NO_WARNINGS"
+	}
     includedirs--附加包含目录
     {
         "%{prj.name}/src",
@@ -64,8 +68,6 @@ project "Kako" --项目名称
     
 
     filter "system:windows"--windows平台的配置
-        cppdialect "c++17"
-        staticruntime "On"
         systemversion "latest"
 
         defines --预编译宏
@@ -106,7 +108,8 @@ project "Sandbox"
     location "Sandbox"
     kind "ConsoleApp"
     language "C++"
-    staticruntime "off"
+    cppdialect "C++17"
+	staticruntime "on"
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -131,8 +134,6 @@ project "Sandbox"
     }
 
     filter "system:windows"
-        cppdialect "c++17"
-        
         systemversion "latest"
 
         defines
@@ -144,18 +145,15 @@ project "Sandbox"
 
     filter "configurations:Debug"
         defines "HZ_DEBUG"
-        
         runtime "Debug"
         symbols "on"
 
     filter "configurations:Release"
         defines "HZ_RELEASE"
-        
         runtime "Release"
         optimize "on"
 
     filter "configurations:Dist"
         defines "HZ_DIST"
-        
         runtime "Release"
         optimize "on"
