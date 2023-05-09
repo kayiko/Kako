@@ -121,6 +121,7 @@ project "Sandbox"
     {
         "Kako/vendor/spdlog/include",
         "Kako/src",
+        "Kako/vendor",
         "%{IncludeDir.glm}"
     }
 

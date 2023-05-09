@@ -5,6 +5,7 @@
 #include "Kako/LayerStack.h"
 #include "Kako/Events/Event.h"
 #include "Kako/Events/ApplicationEvent.h"
+#include "Kako/ImGui/ImGuiLayer.h"
 namespace Kako {
     class HAZEL_API Application
     {
@@ -21,9 +22,11 @@ namespace Kako {
         private:
             bool OnWindowClose(WindowCloseEvent& e);
             std::unique_ptr<Window> m_Window;
+            ImGuiLayer* m_ImGuiLayer;
             bool m_Running = true;
             LayerStack m_LayerStack;
             static Application* s_Instance;
+
     };
     Application* CreateApplication();
 }

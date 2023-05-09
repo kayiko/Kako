@@ -1,5 +1,5 @@
 #include<Kako.h>
-
+#include "imgui/imgui.h"
 class ExampleLayer : public Kako::Layer
 {
 public:
@@ -12,6 +12,14 @@ public:
 	{
 		if(Kako::Input::IsKeyPressed(HZ_KEY_TAB))
 		HZ_TRACE("Tab key is pressed!");
+	}
+	virtual void OnImGuiRender() override
+	{
+		//ImGui::Begin();
+	
+		ImGui::Begin("Test");
+		ImGui::Text("Hello World");
+		ImGui::End();
 	}
 
 	void OnEvent(Kako::Event& event) override
@@ -31,7 +39,7 @@ class SandBox : public Kako::Application {
     public:
         SandBox() {
 			PushLayer(new ExampleLayer());
-			PushOverlay(new Kako::ImGuiLayer());
+			
         }
         ~SandBox() {
 
