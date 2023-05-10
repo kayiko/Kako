@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Kako/Window.h"
-
+#include "Kako/Renderer/GraphicsContext.h"
 #include <GLFW/glfw3.h>
 
 namespace Kako {
@@ -28,6 +28,7 @@ namespace Kako {
         virtual void Shutdown();
     private:
         GLFWwindow* m_Window;
+        GraphicsContext* m_Context;
 
         struct WindowData
         {
