@@ -6,6 +6,7 @@
 #include "Kako/Events/Event.h"
 #include "Kako/Events/ApplicationEvent.h"
 #include "Kako/ImGui/ImGuiLayer.h"
+#include "Kako/Renderer/Shader.h"
 namespace Kako {
     class HAZEL_API Application
     {
@@ -27,6 +28,7 @@ namespace Kako {
             LayerStack m_LayerStack;
             static Application* s_Instance;
             unsigned int m_VertexArray, m_VertexBuffer, m_IndexBuffer;
+            std::unique_ptr<Shader> m_Shader;
 
     };
     Application* CreateApplication();
