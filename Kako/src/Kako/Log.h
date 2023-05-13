@@ -22,13 +22,13 @@ namespace Kako {
 #define HZ_CORE_INFO(...)     ::Kako::Log::GetCoreLogger()->info(__VA_ARGS__)
 #define HZ_CORE_WARN(...)     ::Kako::Log::GetCoreLogger()->warn(__VA_ARGS__)
 #define HZ_CORE_ERROR(...)    ::Kako::Log::GetCoreLogger()->error(__VA_ARGS__)
-//#define HZ_CORE_FATAL(...)    ::Hazel::Log::GetCoreLogger()->fatal(__VA_ARGS__) 
+#define HZ_CORE_FATAL(...)    ::Kako::Log::GetCoreLogger()->critical(__VA_ARGS__)
 
 // Client log macros
 #define HZ_TRACE(...)	      ::Kako::Log::GetClientLogger()->trace(__VA_ARGS__)
 #define HZ_INFO(...)	      ::Kako::Log::GetClientLogger()->info(__VA_ARGS__)
 #define HZ_WARN(...)	      ::Kako::Log::GetClientLogger()->warn(__VA_ARGS__)
 #define HZ_ERROR(...)	      ::Kako::Log::GetClientLogger()->error(__VA_ARGS__)
-//#define HZ_FATAL(...)	      ::Hazel::Log::GetClientLogger()->fatal(__VA_ARGS__)
+#define HZ_FATAL(...)	      ::Kako::Log::GetClientLogger()->critical(__VA_ARGS__)
 
 
