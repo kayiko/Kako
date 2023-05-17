@@ -9,6 +9,8 @@
 #include "Kako/Renderer/Shader.h"
 #include "Kako/Renderer/Buffer.h"
 #include "Kako/Renderer/VertexArray.h"
+#include "Kako/Renderer/OrthographicCamera.h"
+
 namespace Kako {
     class HAZEL_API Application
     {
@@ -34,6 +36,7 @@ namespace Kako {
 
             std::shared_ptr<Shader> m_BlueShader;
             std::shared_ptr<VertexArray> m_SquareVA;
+            OrthographicCamera m_Camera;
 
     };
     Application* CreateApplication();
