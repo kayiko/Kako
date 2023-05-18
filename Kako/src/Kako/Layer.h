@@ -1,6 +1,7 @@
 #pragma once
 #include "Kako/Core.h"
 #include "Kako/Events/Event.h"
+#include "Kako/Core/Timestep.h"
 
 namespace Kako {
 
@@ -12,7 +13,7 @@ namespace Kako {
 
 		virtual void OnAttach() {}
 		virtual void OnDetach() {}
-		virtual void OnUpdate() {}
+		virtual void OnUpdate(Timestep ts) {}
 		virtual void OnImGuiRender() {}
 		virtual void OnEvent(Event& event) {}
 

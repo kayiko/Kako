@@ -152,6 +152,7 @@
     <ClInclude Include="src\Kako.h" />
     <ClInclude Include="src\Kako\Application.h" />
     <ClInclude Include="src\Kako\Core.h" />
+    <ClInclude Include="src\Kako\Core\Timestep.h" />
     <ClInclude Include="src\Kako\EntryPoint.h" />
     <ClInclude Include="src\Kako\Events\ApplicationEvent.h" />
     <ClInclude Include="src\Kako\Events\Event.h" />
